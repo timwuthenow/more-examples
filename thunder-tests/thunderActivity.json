@@ -1,0 +1,40 @@
+[
+  {
+    "_id": "50e63b20-2638-46e5-9100-f1014cc38460",
+    "colId": "history",
+    "containerId": "",
+    "name": "Pricing",
+    "url": "http://localhost:8080/pricing",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2022-11-07T11:59:22.861Z",
+    "modified": "2022-11-09T12:45:19.924Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"Age\": 20,\n  \"Previous incidents?\": true\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "dbfccb76-180b-4acb-86b0-d3bf4da4ff71",
+    "colId": "history",
+    "containerId": "",
+    "name": "Call Center",
+    "url": "http://localhost:8080/call-centre",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2022-11-09T12:44:16.091Z",
+    "modified": "2022-11-09T12:50:09.444Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"incoming call\": {\n    \"phone\": {\n      \"country prefix\": \"+420\",\n      \"phone number\": \"1234\"\n    },\n    \"purpose\": \"help\"\n  },\n  \"office\": {\n    \"location\": \"Rome\"\n  },\n  \"employees\": [\n    {\n      \"name\": \"Duncan\",\n      \"office location\": \"Rome\"\n    }\n  ]\n}",
+      "form": []
+    },
+    "tests": []
+  }
+]

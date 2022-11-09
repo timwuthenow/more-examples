@@ -1,0 +1,21 @@
+[
+  {
+    "_id": "090d739d-b932-4a67-ad20-0f87b3b1c71d",
+    "name": "Local",
+    "default": true,
+    "sortNum": 10000,
+    "created": "2022-11-07T12:08:15.204Z",
+    "modified": "2022-11-07T12:13:39.999Z",
+    "data": [],
+    "envFile": "../env/local.env"
+  },
+  {
+    "_id": "e1e01b6e-173b-4ca9-afe9-4d5d4e7f7a9e",
+    "name": "Dev",
+    "default": false,
+    "sortNum": 20000,
+    "created": "2022-11-07T12:10:03.480Z",
+    "modified": "2022-11-07T12:10:03.480Z",
+    "data": []
+  }
+]

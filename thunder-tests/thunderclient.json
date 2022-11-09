@@ -1,0 +1,21 @@
+[
+  {
+    "_id": "e97c8e4d-5ded-44fc-8cb1-85b48d82c82e",
+    "colId": "b755ed90-2da2-4606-8878-f508b68074af",
+    "containerId": "",
+    "name": "Pricing",
+    "url": "http://{{hostname}}:8080/pricing",
+    "method": "POST",
+    "sortNum": 10000,
+    "created": "2022-11-07T12:03:28.938Z",
+    "modified": "2022-11-07T12:09:28.914Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"Age\": 20,\n  \"Previous incidents?\": true\n}",
+      "form": []
+    },
+    "tests": []
+  }
+]
