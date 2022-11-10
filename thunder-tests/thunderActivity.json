@@ -27,7 +27,7 @@
     "method": "POST",
     "sortNum": 0,
     "created": "2022-11-09T12:44:16.091Z",
-    "modified": "2022-11-10T10:05:04.623Z",
+    "modified": "2022-11-10T11:40:49.642Z",
     "headers": [],
     "params": [],
     "body": {
@@ -46,12 +46,12 @@
     "method": "POST",
     "sortNum": 0,
     "created": "2022-11-09T12:44:16.091Z",
-    "modified": "2022-11-10T10:02:15.696Z",
+    "modified": "2022-11-10T11:38:59.297Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"incoming call\": {\n    \"phone\": {\n      \"country prefix\": \"+420\",\n      \"phone number\": \"1234\"\n    },\n    \"purpose\": \"help\"\n  }\n}",
+      "raw": "{\n  \"call\": {\n    \"phone\": {\n      \"country prefix\": \"+420\",\n      \"phone number\": \"1234\"\n    },\n    \"purpose\": \"help\"\n  }\n}",
       "form": []
     },
     "tests": []
