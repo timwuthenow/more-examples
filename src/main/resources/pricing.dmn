@@ -9,9 +9,9 @@
     <dmn:extensionElements/>
     <dmn:variable id="_86C63CC2-5B15-461E-BCC9-5F7261F1DD04" name="Previous incidents?" typeRef="boolean"/>
   </dmn:inputData>
-  <dmn:decision id="_72DFBC92-82CB-4544-A25F-E2CED29497B6" name="Base price">
+  <dmn:decision id="_72DFBC92-82CB-4544-A25F-E2CED29497B6" name="Base_Price">
     <dmn:extensionElements/>
-    <dmn:variable id="_E056EA21-897B-43D6-B592-E612A96D91A9" name="Base price" typeRef="number"/>
+    <dmn:variable id="_E056EA21-897B-43D6-B592-E612A96D91A9" name="Base_Price" typeRef="number"/>
     <dmn:informationRequirement id="_0FE48AF4-07AC-419C-AB12-CEA541945558">
       <dmn:requiredInput href="#_E05602D1-1C40-4C7B-9461-CA7D21047BFC"/>
     </dmn:informationRequirement>

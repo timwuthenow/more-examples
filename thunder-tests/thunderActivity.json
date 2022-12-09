@@ -27,12 +27,12 @@
     "method": "POST",
     "sortNum": 0,
     "created": "2022-11-09T12:44:16.091Z",
-    "modified": "2022-11-10T11:40:49.642Z",
+    "modified": "2022-11-11T10:24:44.673Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"incoming call\": {\n    \"phone\": {\n      \"country prefix\": \"+420\",\n      \"phone number\": \"1234\"\n    },\n    \"purpose\": \"help\"\n  },\n  \"office\": {\n    \"location\": \"Rome\"\n  },\n  \"employees\": [\n    {\n      \"name\": \"Duncan\",\n      \"office location\": \"Rome\"\n    }\n  ]\n}",
+      "raw": "  { \n    \"decision-name\" : \"Accept Call\",\n    \"dmn-context\":{ \n      \"incoming call\":{ \n          \"phone\": { \n              \"country prefix\": \"+420\", \n              \"phone number\": \"1234\" \n          }, \n            \"purpose\": \"help\" \n      },\n      \"employees\": [{ \n          \"name\": \"Duncan\", \n          \"office location\": \"Rome\" \n      }], \n      \"office\": { \n          \"location\": \"Rome\" \n      } \n    } \n  } \n",
       "form": []
     },
     "tests": []
@@ -46,12 +46,102 @@
     "method": "POST",
     "sortNum": 0,
     "created": "2022-11-09T12:44:16.091Z",
-    "modified": "2022-11-10T11:38:59.297Z",
+    "modified": "2022-11-11T10:23:17.402Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
       "raw": "{\n  \"call\": {\n    \"phone\": {\n      \"country prefix\": \"+420\",\n      \"phone number\": \"1234\"\n    },\n    \"purpose\": \"help\"\n  }\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "588b68ce-47d4-41b8-a6dc-fec8a700b89b",
+    "colId": "history",
+    "containerId": "",
+    "name": "Call Center With Call",
+    "url": "http://localhost:8080/call-centre",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2022-11-09T12:44:16.091Z",
+    "modified": "2022-11-10T15:19:36.458Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"incoming call\": {\n    \"phone\": {\n      \"country prefix\": \"+420\",\n      \"phone number\": \"1234\"\n    },\n    \"purpose\": \"help\"\n  },\n  \"office\": {\n    \"location\": \"Rome\"\n  },\n  \"employees\": [\n    {\n      \"name\": \"Duncan\",\n      \"office location\": \"Rome\"\n    }\n  ],\n  \"call\": {\n    \"phone\": {\n      \"country prefix\": \"+420\",\n      \"phone number\": \"1234\"\n    },\n    \"purpose\": \"help\"\n  }\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "32741947-21bd-478f-ad25-befc14dfd3d7",
+    "colId": "history",
+    "containerId": "",
+    "name": "Kie Call Center",
+    "url": "http://localhost:8080/kie-server/services/rest/server/containers/call-centre-decisions/dmn",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2022-11-10T12:43:28.263Z",
+    "modified": "2022-11-10T12:57:20.806Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{ \n    \"decision-name\" : \"Accept Call\",\n    \"dmn-context\":{ \n      \"incoming call\":{ \n          \"phone\": { \n              \"country prefix\": \"+420\", \n              \"phone number\": \"1234\" \n          }, \n            \"purpose\": \"help\" \n      },\n      \"employees\": [{ \n          \"name\": \"Duncan\", \n          \"office location\": \"Rome\" \n      }], \n      \"office\": { \n          \"location\": \"Rome\" \n      } \n    } \n  }",
+      "form": []
+    },
+    "auth": {
+      "type": "basic",
+      "basic": {
+        "username": "kieserver",
+        "password": "kieserver1!"
+      }
+    },
+    "tests": []
+  },
+  {
+    "_id": "679c9ecd-ea6c-4ac2-b221-dd0a92dad0da",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:8080/kie-server/services/rest/server/containers/call-centre-decisions/dmn",
+    "url": "http://localhost:8080/kie-server/services/rest/server/containers/call-centre-decisions/dmn",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2022-11-10T12:43:41.345Z",
+    "modified": "2022-11-10T12:43:41.457Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{ \n    \"decision-name\" : \"Accept Call\",\n    \"dmn-context\":{ \n      \"incoming call\":{ \n          \"phone\": { \n              \"country prefix\": \"+420\", \n              \"phone number\": \"1234\" \n          }, \n            \"purpose\": \"help\" \n      },\n      \"employees\": [{ \n          \"name\": \"Duncan\", \n          \"office location\": \"Rome\" \n      }], \n      \"office\": { \n          \"location\": \"Rome\" \n      } \n    } \n  }",
+      "form": []
+    },
+    "auth": {
+      "type": "basic",
+      "basic": {
+        "username": "kieserver",
+        "password": "kieserver1!"
+      }
+    },
+    "tests": []
+  },
+  {
+    "_id": "e38272a5-6799-41ce-a459-231793dd227a",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:8080/Loan-PreQualification",
+    "url": "http://localhost:8080/Loan-PreQualification",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2022-12-08T09:50:37.209Z",
+    "modified": "2022-12-08T09:50:37.209Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"Loan rate pct\": 6,\n  \"Purchase price\": 100000,\n  \"Credit Score\": 850,\n  \"Down payment\": 10000,\n  \"Monthly income\": 3000\n}",
       "form": []
     },
     "tests": []

@@ -17,5 +17,133 @@
       "form": []
     },
     "tests": []
+  },
+  {
+    "_id": "5fb67493-f0f5-4cd6-81e7-10ba1a7107ed",
+    "colId": "f12a771d-ef4f-4624-9b24-b2e385795801",
+    "containerId": "",
+    "name": "Kie Call Center",
+    "url": "http://localhost:8080/kie-server/services/rest/server/containers/call-centre-decisions/dmn",
+    "method": "POST",
+    "sortNum": 10000,
+    "created": "2022-11-10T12:46:27.438Z",
+    "modified": "2022-11-10T13:01:55.181Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"decision-name\": \"Accept Call\",\n  \"dmn-context\": {\n    \"incoming call\": {\n      \"phone\": {\n        \"country prefix\": \"+420\",\n        \"phone number\": \"1234\"\n      },\n      \"purpose\": \"help\"\n    },\n    \"employees\": [\n      {\n        \"name\": \"Duncan\",\n        \"office location\": \"Rome\"\n      }\n    ],\n    \"office\": {\n      \"location\": \"Rome\"\n    }\n  }\n}",
+      "form": []
+    },
+    "auth": {
+      "type": "basic",
+      "basic": {
+        "username": "kieserver",
+        "password": "kieserver1!"
+      }
+    },
+    "tests": []
+  },
+  {
+    "_id": "2a404675-a76a-4819-af5c-8e0c943db8bc",
+    "colId": "f12a771d-ef4f-4624-9b24-b2e385795801",
+    "containerId": "",
+    "name": "Kie Call Center - Nested",
+    "url": "http://localhost:8080/kie-server/services/rest/server/containers/call-centre-decisions/dmn",
+    "method": "POST",
+    "sortNum": 20000,
+    "created": "2022-11-10T12:58:42.855Z",
+    "modified": "2022-11-10T13:06:42.375Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"decision-name\": \"Call Can Be Handled\",\n  \"dmn-context\": {\n    \"call\": {\n      \"phone\": {\n        \"country prefix\": \"+420\",\n        \"phone number\": \"1234\"\n      },\n      \"purpose\": \"help\"\n    }\n  }\n}",
+      "form": []
+    },
+    "auth": {
+      "type": "basic",
+      "basic": {
+        "username": "kieserver",
+        "password": "kieserver1!"
+      }
+    },
+    "tests": []
+  },
+  {
+    "_id": "459a95dc-383b-4ee2-84dd-da55d79968dc",
+    "colId": "3ac15b51-7e08-473d-acc4-c325474b4376",
+    "containerId": "",
+    "name": "Likely",
+    "url": "http://localhost:8080/Loan-PreQualification",
+    "method": "POST",
+    "sortNum": 10000,
+    "created": "2022-12-08T09:51:35.328Z",
+    "modified": "2022-12-08T12:39:53.143Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"Loan rate pct\": 2.5,\n  \"Purchase price\": 120000,\n  \"Credit Score\": 800,\n  \"Down payment\": 10000,\n  \"Monthly income\": 3000\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "bd0ee851-c096-4c8c-98cc-a7f60aaebbce",
+    "colId": "3ac15b51-7e08-473d-acc4-c325474b4376",
+    "containerId": "",
+    "name": "Partial",
+    "url": "http://localhost:8080/Loan-PreQualification",
+    "method": "POST",
+    "sortNum": 20000,
+    "created": "2022-12-08T09:52:37.044Z",
+    "modified": "2022-12-08T16:30:31.564Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"Loan rate pct\": 6,\n  \"Purchase price\": 100000,\n  \n  \"Down payment\": 10000\n \n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "28050a6b-ea2a-4ada-a4a2-9ef2fb859a58",
+    "colId": "3ac15b51-7e08-473d-acc4-c325474b4376",
+    "containerId": "",
+    "name": "Possibly",
+    "url": "http://localhost:8080/Loan-PreQualification",
+    "method": "POST",
+    "sortNum": 15000,
+    "created": "2022-12-08T12:05:28.314Z",
+    "modified": "2022-12-08T12:40:17.770Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"Loan rate pct\": 2.5,\n  \"Purchase price\": 120000,\n  \"Credit Score\": 700,\n  \"Down payment\": 10000,\n  \"Monthly income\": 2100\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "1a0d49db-a8e7-4d33-9281-8f244a568092",
+    "colId": "3ac15b51-7e08-473d-acc4-c325474b4376",
+    "containerId": "",
+    "name": "Rejected",
+    "url": "http://localhost:8080/Loan-PreQualification",
+    "method": "POST",
+    "sortNum": 17500,
+    "created": "2022-12-08T12:07:27.436Z",
+    "modified": "2022-12-08T12:25:06.951Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"Loan rate pct\": 2.5,\n  \"Purchase price\": 120000,\n  \"Credit Score\": 670,\n  \"Down payment\": 10000,\n  \"Monthly income\": 2100\n}",
+      "form": []
+    },
+    "tests": []
   }
 ]
