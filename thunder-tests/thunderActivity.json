@@ -8,69 +8,12 @@
     "method": "POST",
     "sortNum": 0,
     "created": "2022-11-07T11:59:22.861Z",
-    "modified": "2022-11-09T14:24:47.694Z",
+    "modified": "2022-12-12T09:28:22.909Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
       "raw": "{\n  \"Age\": 20,\n  \"Previous incidents?\": true\n}",
-      "form": []
-    },
-    "tests": []
-  },
-  {
-    "_id": "dbfccb76-180b-4acb-86b0-d3bf4da4ff71",
-    "colId": "history",
-    "containerId": "",
-    "name": "Call Center",
-    "url": "http://localhost:8080/call-centre",
-    "method": "POST",
-    "sortNum": 0,
-    "created": "2022-11-09T12:44:16.091Z",
-    "modified": "2022-11-11T10:24:44.673Z",
-    "headers": [],
-    "params": [],
-    "body": {
-      "type": "json",
-      "raw": "  { \n    \"decision-name\" : \"Accept Call\",\n    \"dmn-context\":{ \n      \"incoming call\":{ \n          \"phone\": { \n              \"country prefix\": \"+420\", \n              \"phone number\": \"1234\" \n          }, \n            \"purpose\": \"help\" \n      },\n      \"employees\": [{ \n          \"name\": \"Duncan\", \n          \"office location\": \"Rome\" \n      }], \n      \"office\": { \n          \"location\": \"Rome\" \n      } \n    } \n  } \n",
-      "form": []
-    },
-    "tests": []
-  },
-  {
-    "_id": "181ef412-4627-41a8-805a-cba8f352ab66",
-    "colId": "history",
-    "containerId": "",
-    "name": "Call Center Can Handle Call",
-    "url": "http://localhost:8080/call-centre/Can Handle Call",
-    "method": "POST",
-    "sortNum": 0,
-    "created": "2022-11-09T12:44:16.091Z",
-    "modified": "2022-11-11T10:23:17.402Z",
-    "headers": [],
-    "params": [],
-    "body": {
-      "type": "json",
-      "raw": "{\n  \"call\": {\n    \"phone\": {\n      \"country prefix\": \"+420\",\n      \"phone number\": \"1234\"\n    },\n    \"purpose\": \"help\"\n  }\n}",
-      "form": []
-    },
-    "tests": []
-  },
-  {
-    "_id": "588b68ce-47d4-41b8-a6dc-fec8a700b89b",
-    "colId": "history",
-    "containerId": "",
-    "name": "Call Center With Call",
-    "url": "http://localhost:8080/call-centre",
-    "method": "POST",
-    "sortNum": 0,
-    "created": "2022-11-09T12:44:16.091Z",
-    "modified": "2022-11-10T15:19:36.458Z",
-    "headers": [],
-    "params": [],
-    "body": {
-      "type": "json",
-      "raw": "{\n  \"incoming call\": {\n    \"phone\": {\n      \"country prefix\": \"+420\",\n      \"phone number\": \"1234\"\n    },\n    \"purpose\": \"help\"\n  },\n  \"office\": {\n    \"location\": \"Rome\"\n  },\n  \"employees\": [\n    {\n      \"name\": \"Duncan\",\n      \"office location\": \"Rome\"\n    }\n  ],\n  \"call\": {\n    \"phone\": {\n      \"country prefix\": \"+420\",\n      \"phone number\": \"1234\"\n    },\n    \"purpose\": \"help\"\n  }\n}",
       "form": []
     },
     "tests": []

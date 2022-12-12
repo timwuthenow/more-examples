@@ -75,11 +75,11 @@
     "colId": "3ac15b51-7e08-473d-acc4-c325474b4376",
     "containerId": "",
     "name": "Likely",
-    "url": "http://localhost:8080/Loan-PreQualification",
+    "url": "http://localhost:9080/Loan-PreQualification",
     "method": "POST",
     "sortNum": 10000,
     "created": "2022-12-08T09:51:35.328Z",
-    "modified": "2022-12-08T12:39:53.143Z",
+    "modified": "2022-12-12T11:03:54.167Z",
     "headers": [],
     "params": [],
     "body": {
@@ -87,7 +87,32 @@
       "raw": "{\n  \"Loan rate pct\": 2.5,\n  \"Purchase price\": 120000,\n  \"Credit Score\": 800,\n  \"Down payment\": 10000,\n  \"Monthly income\": 3000\n}",
       "form": []
     },
-    "tests": []
+    "tests": [
+      {
+        "type": "res-code",
+        "custom": "",
+        "action": "equal",
+        "value": "200"
+      },
+      {
+        "type": "res-body",
+        "custom": "",
+        "action": "contains",
+        "value": "\"Loan amount\": 110000"
+      },
+      {
+        "type": "json-query",
+        "custom": "json.Loan payment",
+        "action": "<=",
+        "value": "435"
+      },
+      {
+        "type": "json-query",
+        "custom": "json.Loan payment",
+        "action": ">",
+        "value": "430"
+      }
+    ]
   },
   {
     "_id": "bd0ee851-c096-4c8c-98cc-a7f60aaebbce",
@@ -117,12 +142,12 @@
     "method": "POST",
     "sortNum": 15000,
     "created": "2022-12-08T12:05:28.314Z",
-    "modified": "2022-12-08T12:40:17.770Z",
+    "modified": "2022-12-09T15:39:02.592Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"Loan rate pct\": 2.5,\n  \"Purchase price\": 120000,\n  \"Credit Score\": 700,\n  \"Down payment\": 10000,\n  \"Monthly income\": 2100\n}",
+      "raw": "{\n  \"Loan rate pct\": 2.5,\n  \"Purchase price\": 120000,\n  \"Credit Score\": 701,\n  \"Down payment\": 10000,\n  \"Monthly income\": 2100\n}",
       "form": []
     },
     "tests": []

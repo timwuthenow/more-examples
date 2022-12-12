@@ -195,6 +195,21 @@
           <dmn:text/>
         </dmn:annotationEntry>
       </dmn:rule>
+      <dmn:rule id="_C6A9697B-CD18-4D3B-8202-A4EA2AC80687">
+        <dmn:inputEntry id="_DA5B9EE7-DC76-4752-B2C8-F2ECEDFCC87F">
+          <dmn:text>(650..680]</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_7024A9E5-9991-4694-92CB-8EC5AF7DD320">
+          <dmn:text>"Marginal"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_B6E1F42F-EC63-4628-BECE-B3A5ADA68FFC">
+          <dmn:text>"Possibly approved"
+</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
       <dmn:rule id="_2DFD12E7-7A3F-4566-B0B6-38406AC1715C">
         <dmn:inputEntry id="_4FB7A25C-3718-4FD3-8C4B-28596B4D67C3">
           <dmn:text>(620..680]</dmn:text>
