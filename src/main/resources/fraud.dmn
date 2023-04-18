@@ -55,6 +55,51 @@
     <dmn:informationRequirement id="_3205AA73-07F2-4286-AFFA-B1D23E1B57F9">
       <dmn:requiredInput href="#_0CE45847-1F4D-4044-A209-463583BCC43E"/>
     </dmn:informationRequirement>
+    <dmn:decisionTable id="_75D3AD30-9790-4563-BDD1-4203060B7D6B" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
+      <dmn:input id="_E648F1F4-1359-4B75-A60D-5A0B219A7366">
+        <dmn:inputExpression id="_304A8663-AC2E-42E7-9391-400D4A19385E" typeRef="string">
+          <dmn:text>Restricted Stocks.asset.symbol</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:input id="_40599576-474E-4101-8127-AA2E56AF6EC7">
+        <dmn:inputExpression id="_B187E7B4-A15F-4055-A1BC-F41AA523DF10" typeRef="order type">
+          <dmn:text>Restricted Stocks.order type</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:input id="_E53BBA0B-D50C-4653-94DF-01DA5B0A2FBF">
+        <dmn:inputExpression id="_791CCCFF-5C88-47C1-99BF-6A247953429F" typeRef="trade">
+          <dmn:text>transaction.historical trades</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:input id="_92BBC619-8A51-4EEE-B5A4-406F5C5A0A22">
+        <dmn:inputExpression id="_9F7F7CF0-A736-40BF-BF84-322F193F9A4A" typeRef="trade">
+          <dmn:text>transaction.propose trade</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:output id="_68AC2F35-3627-49D7-96D3-A13B1FE95BEB"/>
+      <dmn:annotation name="annotation-1"/>
+      <dmn:rule id="_D3589421-DBAC-48AD-BA87-155E0F1B52A1">
+        <dmn:inputEntry id="_FFAAD88A-E968-4F93-BC01-11F11929F54A">
+          <dmn:text>"GME"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_EEA7269E-1B21-4C27-9C48-6FAB83CDCBCA">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_02713AD0-A3C4-441D-8375-BCCF29521D2B">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_CE1C1B8E-5993-424D-A1C5-8EA0319B7731">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_7F562C09-2B54-4C87-979B-6313C6DF5233">
+          <dmn:text>true
+</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+    </dmn:decisionTable>
   </dmn:decision>
   <dmn:inputData id="_755E3697-2EB9-472E-B888-44DAA5525DA1" name="Restricted Stocks">
     <dmn:extensionElements/>
@@ -63,7 +108,17 @@
   <dmndi:DMNDI>
     <dmndi:DMNDiagram id="_915147C6-105B-45B2-BE3C-5D92FB9F9435" name="DRG">
       <di:extension>
-        <kie:ComponentsWidthsExtension/>
+        <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths dmnElementRef="_75D3AD30-9790-4563-BDD1-4203060B7D6B">
+            <kie:width>50</kie:width>
+            <kie:width>310</kie:width>
+            <kie:width>220</kie:width>
+            <kie:width>279</kie:width>
+            <kie:width>323</kie:width>
+            <kie:width>433</kie:width>
+            <kie:width>571</kie:width>
+          </kie:ComponentWidths>
+        </kie:ComponentsWidthsExtension>
       </di:extension>
       <dmndi:DMNShape id="dmnshape-drg-_0CE45847-1F4D-4044-A209-463583BCC43E" dmnElementRef="_0CE45847-1F4D-4044-A209-463583BCC43E" isCollapsed="false">
         <dmndi:DMNStyle>
@@ -71,7 +126,7 @@
           <dmndi:StrokeColor red="0" green="0" blue="0"/>
           <dmndi:FontColor red="0" green="0" blue="0"/>
         </dmndi:DMNStyle>
-        <dc:Bounds x="247" y="344" width="100" height="50"/>
+        <dc:Bounds x="247" y="359" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
       <dmndi:DMNShape id="dmnshape-drg-_9AC18429-8FC6-4779-A238-366D77F88C04" dmnElementRef="_9AC18429-8FC6-4779-A238-366D77F88C04" isCollapsed="false">
@@ -97,7 +152,7 @@
         <di:waypoint x="455.24131082423037" y="199"/>
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-drg-_3205AA73-07F2-4286-AFFA-B1D23E1B57F9" dmnElementRef="_3205AA73-07F2-4286-AFFA-B1D23E1B57F9">
-        <di:waypoint x="297" y="369"/>
+        <di:waypoint x="297" y="384"/>
         <di:waypoint x="455.24131082423037" y="199"/>
       </dmndi:DMNEdge>
     </dmndi:DMNDiagram>
