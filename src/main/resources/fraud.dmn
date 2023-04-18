@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_33DD3E8E-7844-4698-B5C1-DC8264DB5368" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_8BE651C2-88C4-4815-8B34-821367D81706" name="fraud" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_33DD3E8E-7844-4698-B5C1-DC8264DB5368">
+  <dmn:description>A model for fraud</dmn:description>
   <dmn:extensionElements/>
   <dmn:itemDefinition id="_F5A136BA-33BC-4B59-8200-9AE49F3AE59A" name="current trade" isCollection="false">
     <dmn:itemComponent id="_6C7F3BE5-9A4E-4800-9C8B-127A2CD1F670" name="proposed trade" isCollection="false">
@@ -60,8 +61,9 @@
     </dmn:informationRequirement>
     <dmn:decisionTable id="_DFDEDA9C-F510-4F91-B1A2-13F3C76D411F" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
       <dmn:input id="_8198ACD8-B82B-432C-AC9D-93CF631C2C81">
-        <dmn:inputExpression id="_5BE6C7DA-7EFD-4866-B2BF-7FB0CE28D9AD" typeRef="string">
-          <dmn:text>Restricted Stocks.asset.symbol</dmn:text>
+        <dmn:description>A frud model</dmn:description>
+        <dmn:inputExpression id="_5BE6C7DA-7EFD-4866-B2BF-7FB0CE28D9AD" typeRef="restricted stocks">
+          <dmn:text>Restricted Stocks</dmn:text>
         </dmn:inputExpression>
       </dmn:input>
       <dmn:input id="_12C3EE1D-B891-4853-B2AE-1194079639DD">
