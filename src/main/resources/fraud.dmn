@@ -1,99 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_8671E4AC-B46C-46E1-BEE7-3BEFB8264E55" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_F7D0B4AE-03CD-44DD-B040-845C91F94DE8" name="fraud" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_8671E4AC-B46C-46E1-BEE7-3BEFB8264E55">
   <dmn:extensionElements/>
-  <dmn:itemDefinition id="_59F0BA6D-4162-4493-AFF5-71B6D12CC8BE" name="order type" isCollection="false">
-    <dmn:typeRef>string</dmn:typeRef>
-    <dmn:allowedValues kie:constraintType="expression" id="_ADDE80E6-4B82-406E-A8F6-E0A6230E4CC8">
-      <dmn:text>"Buy", "Sell", "Put", "Call"</dmn:text>
-    </dmn:allowedValues>
-  </dmn:itemDefinition>
-  <dmn:itemDefinition id="_8CDF3606-C8F5-4D6B-ABDE-ADF7E9427F23" name="transaction" isCollection="false">
-    <dmn:itemComponent id="_69F4D84B-9BC1-4FC8-81EB-2A3F580B09A6" name="propose trade" isCollection="false">
-      <dmn:typeRef>trade</dmn:typeRef>
+  <dmn:itemDefinition id="_556E5419-CDBF-4D24-A387-852666334C3C" name="transaction" isCollection="false">
+    <dmn:itemComponent id="_47866EBD-13CC-46F5-88A9-8B9C2B47282D" name="order type" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+      <dmn:allowedValues kie:constraintType="expression" id="_19B218D0-3E93-48B4-B4FD-9F228648217C">
+        <dmn:text>"Buy", "Sell", "Call", "Put"</dmn:text>
+      </dmn:allowedValues>
     </dmn:itemComponent>
-    <dmn:itemComponent id="_8FFED7C6-9ABB-4050-9595-638D7FB0A4FE" name="historical trades" isCollection="true">
-      <dmn:typeRef>trade</dmn:typeRef>
-    </dmn:itemComponent>
-  </dmn:itemDefinition>
-  <dmn:itemDefinition id="_A4123E8D-ADDF-4F2B-9829-9255A8DA5CD6" name="trade" isCollection="false">
-    <dmn:itemComponent id="_304831C9-8565-4BB9-B617-2913324D0DCA" name="order type" isCollection="false">
-      <dmn:typeRef>order type</dmn:typeRef>
-    </dmn:itemComponent>
-    <dmn:itemComponent id="_E4A4E9B7-AE15-4DA2-9570-0936CA307F62" name="asset" isCollection="false">
-      <dmn:typeRef>Any</dmn:typeRef>
-    </dmn:itemComponent>
-    <dmn:itemComponent id="_D7CEC342-09D9-48E2-8478-3307AA3ACDF9" name="quantity" isCollection="false">
+    <dmn:itemComponent id="_2BABE717-03FC-4DFE-9081-CFAFC3875DA2" name="cost basis" isCollection="false">
       <dmn:typeRef>number</dmn:typeRef>
     </dmn:itemComponent>
-    <dmn:itemComponent id="_CF4A6A90-1173-499F-AD1B-03C81D19727D" name="cost basis" isCollection="false">
-      <dmn:typeRef>number</dmn:typeRef>
+    <dmn:itemComponent id="_7F68F63B-998B-4C51-9FFB-9C2258735D6B" name="security" isCollection="false">
+      <dmn:typeRef>security</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_B6FEEF09-F0F1-4323-A589-15455CE818E9" name="date initiated" isCollection="false">
+      <dmn:typeRef>date</dmn:typeRef>
     </dmn:itemComponent>
   </dmn:itemDefinition>
-  <dmn:itemDefinition id="_28283345-1CA0-41F9-844C-8DF45B0441B8" name="asset" isCollection="false">
-    <dmn:itemComponent id="_A97E7B1E-0677-4142-A66C-495AA4934EE3" name="symbol" isCollection="false">
-      <dmn:typeRef>Any</dmn:typeRef>
+  <dmn:itemDefinition id="_46CBD1BE-4CFD-4FBE-89A9-97BD39B57CB8" name="proposed trade" isCollection="false">
+    <dmn:itemComponent id="_CA864527-3956-46FA-99C0-1C1BC7E56C0A" name="symbol" isCollection="false">
+      <dmn:typeRef>security</dmn:typeRef>
     </dmn:itemComponent>
   </dmn:itemDefinition>
-  <dmn:itemDefinition id="_1F819551-BBE5-453C-955E-293FE791AF1F" name="restricted stocks" isCollection="false">
-    <dmn:itemComponent id="_87380365-42E3-4D45-A33E-3594CD51064F" name="asset" isCollection="false">
-      <dmn:typeRef>asset</dmn:typeRef>
+  <dmn:itemDefinition id="_DADB2CA8-C9B9-424E-97C1-3BF0AE4750BB" name="security" isCollection="false">
+    <dmn:itemComponent id="_4C213AC2-32C9-42B2-BCAA-78866E9602EE" name="symbol" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
     </dmn:itemComponent>
-    <dmn:itemComponent id="_BD8FEFF5-31C0-4F6E-B486-D8E7FD8164BD" name="order type" isCollection="false">
-      <dmn:typeRef>order type</dmn:typeRef>
+    <dmn:itemComponent id="_57B5763C-B870-4D14-90D8-01E5D77C6BF2" name="type" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
     </dmn:itemComponent>
   </dmn:itemDefinition>
-  <dmn:inputData id="_0CE45847-1F4D-4044-A209-463583BCC43E" name="transaction">
+  <dmn:itemDefinition id="_F4B40E94-5768-4847-AA46-EA4BE9D92C13" name="historical transaction" isCollection="false">
+    <dmn:itemComponent id="_6FB34A5D-054D-465A-ABB1-C40AAA30064C" name="transaction" isCollection="true">
+      <dmn:typeRef>transaction</dmn:typeRef>
+    </dmn:itemComponent>
+  </dmn:itemDefinition>
+  <dmn:inputData id="_E1892E61-3DB0-4023-879B-4AD57DB6DC07" name="trade">
     <dmn:extensionElements/>
-    <dmn:variable id="_8B1245FF-8133-4C04-9C57-F948AA80E4B0" name="transaction" typeRef="transaction"/>
+    <dmn:variable id="_5BC0B11D-CBC8-4555-8658-CF7CF9AA6AF7" name="trade" typeRef="transaction"/>
   </dmn:inputData>
-  <dmn:decision id="_9AC18429-8FC6-4779-A238-366D77F88C04" name="Flagged Transaction">
+  <dmn:decision id="_BD704B9B-797C-4EAD-8BD7-608E11359693" name="Flag for Fraud Check">
     <dmn:extensionElements/>
-    <dmn:variable id="_EF6B6866-40C7-4BC8-A6EF-91393F121488" name="Flagged Transaction" typeRef="boolean"/>
-    <dmn:informationRequirement id="_B14317C3-0829-4FEF-A61F-035F6EBB1C7C">
-      <dmn:requiredInput href="#_755E3697-2EB9-472E-B888-44DAA5525DA1"/>
+    <dmn:variable id="_17C84577-4A73-45AA-AA54-06E5E9010069" name="Flag for Fraud Check" typeRef="boolean"/>
+    <dmn:informationRequirement id="_636F5B4D-E87E-463C-8F40-1D194A8A1282">
+      <dmn:requiredInput href="#_E1892E61-3DB0-4023-879B-4AD57DB6DC07"/>
     </dmn:informationRequirement>
-    <dmn:informationRequirement id="_3205AA73-07F2-4286-AFFA-B1D23E1B57F9">
-      <dmn:requiredInput href="#_0CE45847-1F4D-4044-A209-463583BCC43E"/>
+    <dmn:informationRequirement id="_55D2FB1F-D7C0-413B-A762-29A6F4F394B7">
+      <dmn:requiredInput href="#_57916596-5142-41FC-9B79-48393C3F1495"/>
     </dmn:informationRequirement>
-    <dmn:decisionTable id="_75D3AD30-9790-4563-BDD1-4203060B7D6B" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
-      <dmn:input id="_E648F1F4-1359-4B75-A60D-5A0B219A7366">
-        <dmn:inputExpression id="_304A8663-AC2E-42E7-9391-400D4A19385E" typeRef="string">
-          <dmn:text>Restricted Stocks.asset.symbol</dmn:text>
+    <dmn:decisionTable id="_AD86DE71-DFB4-4A37-85AC-4BC4005FAA02" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
+      <dmn:input id="_391B0428-8C1B-4E04-8588-32BF50B7603C">
+        <dmn:inputExpression id="_5623270C-8B5D-4171-8A24-4C4C482411CA" typeRef="transaction">
+          <dmn:text>Historical Trades.transaction</dmn:text>
         </dmn:inputExpression>
       </dmn:input>
-      <dmn:input id="_40599576-474E-4101-8127-AA2E56AF6EC7">
-        <dmn:inputExpression id="_B187E7B4-A15F-4055-A1BC-F41AA523DF10" typeRef="order type">
-          <dmn:text>Restricted Stocks.order type</dmn:text>
+      <dmn:input id="_74FB3899-3393-4832-8C59-62067F63976E">
+        <dmn:inputExpression id="_31FF2EC4-AF6C-48CF-B895-52CCD657C57D" typeRef="number">
+          <dmn:text>trade.cost basis</dmn:text>
         </dmn:inputExpression>
       </dmn:input>
-      <dmn:input id="_E53BBA0B-D50C-4653-94DF-01DA5B0A2FBF">
-        <dmn:inputExpression id="_791CCCFF-5C88-47C1-99BF-6A247953429F" typeRef="trade">
-          <dmn:text>transaction.historical trades</dmn:text>
+      <dmn:input id="_7F0D7640-54EC-4806-A339-C74B79932BC8">
+        <dmn:inputExpression id="_575C6A62-9165-4A36-AC99-6AA368C2B9CE" typeRef="string">
+          <dmn:text>trade.order type</dmn:text>
         </dmn:inputExpression>
       </dmn:input>
-      <dmn:input id="_92BBC619-8A51-4EEE-B5A4-406F5C5A0A22">
-        <dmn:inputExpression id="_9F7F7CF0-A736-40BF-BF84-322F193F9A4A" typeRef="trade">
-          <dmn:text>transaction.propose trade</dmn:text>
+      <dmn:input id="_E078B608-8C2C-4A9C-BCF2-B8F4A554E1A0">
+        <dmn:inputExpression id="_B7931C33-BA34-48A1-92D7-4D17D4AAD5F4" typeRef="string">
+          <dmn:text>trade.security.symbol</dmn:text>
         </dmn:inputExpression>
       </dmn:input>
-      <dmn:output id="_68AC2F35-3627-49D7-96D3-A13B1FE95BEB"/>
+      <dmn:output id="_F2E8ED2B-5637-42EA-A239-933D2EA41AE8"/>
       <dmn:annotation name="annotation-1"/>
-      <dmn:rule id="_D3589421-DBAC-48AD-BA87-155E0F1B52A1">
-        <dmn:inputEntry id="_FFAAD88A-E968-4F93-BC01-11F11929F54A">
-          <dmn:text>"GME"</dmn:text>
-        </dmn:inputEntry>
-        <dmn:inputEntry id="_EEA7269E-1B21-4C27-9C48-6FAB83CDCBCA">
+      <dmn:rule id="_B55B27DE-8FA0-45DB-A6ED-65F647B75327">
+        <dmn:inputEntry id="_C4F7F910-AA2A-4B4F-8D36-D78D1DD22EE9">
           <dmn:text>-</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry id="_02713AD0-A3C4-441D-8375-BCCF29521D2B">
+        <dmn:inputEntry id="_E4691E71-D08C-4C84-94D9-BC0467697D4C">
           <dmn:text>-</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry id="_CE1C1B8E-5993-424D-A1C5-8EA0319B7731">
+        <dmn:inputEntry id="_3B637EC7-D81A-4938-9177-B07C92235C93">
           <dmn:text>-</dmn:text>
         </dmn:inputEntry>
-        <dmn:outputEntry id="_7F562C09-2B54-4C87-979B-6313C6DF5233">
-          <dmn:text>true
-</dmn:text>
+        <dmn:inputEntry id="_8CFDCA95-B1BC-4EDB-A908-B8A9D513D570">
+          <dmn:text>"FAKE"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_CC274466-7009-4EBF-8DE8-E0918F9A5223">
+          <dmn:text>true</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text/>
@@ -101,59 +94,112 @@
       </dmn:rule>
     </dmn:decisionTable>
   </dmn:decision>
-  <dmn:inputData id="_755E3697-2EB9-472E-B888-44DAA5525DA1" name="Restricted Stocks">
+  <dmn:inputData id="_57916596-5142-41FC-9B79-48393C3F1495" name="Historical Trades">
     <dmn:extensionElements/>
-    <dmn:variable id="_3D5282BA-286F-4393-B550-F59AD288B568" name="Restricted Stocks" typeRef="restricted stocks"/>
+    <dmn:variable id="_8F119171-BF2C-4409-9338-A2243D337F83" name="Historical Trades" typeRef="historical transaction"/>
   </dmn:inputData>
+  <dmn:decision id="_9F3D161A-A3BA-4A00-A5A1-7E2486C58D7F" name="Flag for number of transactions">
+    <dmn:extensionElements/>
+    <dmn:variable id="_26C3EC19-670D-4261-8AF6-B1BF4C332A61" name="Flag for number of transactions" typeRef="Any"/>
+    <dmn:informationRequirement id="_EDA5F513-849A-4C0B-94AA-7EB755DA3D9C">
+      <dmn:requiredInput href="#_57916596-5142-41FC-9B79-48393C3F1495"/>
+    </dmn:informationRequirement>
+    <dmn:context id="_A5A3FCA5-B0BE-4991-8B40-793C4B0C5786">
+      <dmn:contextEntry>
+        <dmn:variable id="_1E94FDA9-A7ED-4CF0-9866-1D130227C837" name="Multiple Transactions Same Symbol" typeRef="transaction"/>
+        <dmn:literalExpression id="_4EDBAE58-7C99-4AD7-AC19-33FD60FF5ADD">
+          <dmn:text>Historical Trades.transaction.security[symbol = "GME"]   </dmn:text>
+        </dmn:literalExpression>
+      </dmn:contextEntry>
+      <dmn:contextEntry>
+        <dmn:variable id="_3B9A03FE-3AAA-48AD-83F4-EFF8105D29F3" name="Count" typeRef="number"/>
+        <dmn:literalExpression id="_B3727880-15B5-4A4F-8CB9-C33E866DFF58">
+          <dmn:text>count(Multiple Transactions Same Symbol)</dmn:text>
+        </dmn:literalExpression>
+      </dmn:contextEntry>
+      <dmn:contextEntry>
+        <dmn:literalExpression id="_DBE0B83C-C031-4193-A573-550EB4071691">
+          <dmn:text>Multiple Transactions Same Symbol</dmn:text>
+        </dmn:literalExpression>
+      </dmn:contextEntry>
+    </dmn:context>
+  </dmn:decision>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram id="_915147C6-105B-45B2-BE3C-5D92FB9F9435" name="DRG">
       <di:extension>
         <kie:ComponentsWidthsExtension>
-          <kie:ComponentWidths dmnElementRef="_75D3AD30-9790-4563-BDD1-4203060B7D6B">
+          <kie:ComponentWidths dmnElementRef="_AD86DE71-DFB4-4A37-85AC-4BC4005FAA02">
             <kie:width>50</kie:width>
-            <kie:width>310</kie:width>
-            <kie:width>220</kie:width>
-            <kie:width>279</kie:width>
-            <kie:width>323</kie:width>
-            <kie:width>433</kie:width>
-            <kie:width>571</kie:width>
+            <kie:width>273</kie:width>
+            <kie:width>191</kie:width>
+            <kie:width>158</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>254</kie:width>
+            <kie:width>100</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_A5A3FCA5-B0BE-4991-8B40-793C4B0C5786">
+            <kie:width>50</kie:width>
+            <kie:width>247</kie:width>
+            <kie:width>561</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_4EDBAE58-7C99-4AD7-AC19-33FD60FF5ADD">
+            <kie:width>561</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_B3727880-15B5-4A4F-8CB9-C33E866DFF58">
+            <kie:width>561</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_DBE0B83C-C031-4193-A573-550EB4071691">
+            <kie:width>561</kie:width>
           </kie:ComponentWidths>
         </kie:ComponentsWidthsExtension>
       </di:extension>
-      <dmndi:DMNShape id="dmnshape-drg-_0CE45847-1F4D-4044-A209-463583BCC43E" dmnElementRef="_0CE45847-1F4D-4044-A209-463583BCC43E" isCollapsed="false">
+      <dmndi:DMNShape id="dmnshape-drg-_E1892E61-3DB0-4023-879B-4AD57DB6DC07" dmnElementRef="_E1892E61-3DB0-4023-879B-4AD57DB6DC07" isCollapsed="false">
         <dmndi:DMNStyle>
           <dmndi:FillColor red="255" green="255" blue="255"/>
           <dmndi:StrokeColor red="0" green="0" blue="0"/>
           <dmndi:FontColor red="0" green="0" blue="0"/>
         </dmndi:DMNStyle>
-        <dc:Bounds x="247" y="359" width="100" height="50"/>
+        <dc:Bounds x="198" y="369" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
-      <dmndi:DMNShape id="dmnshape-drg-_9AC18429-8FC6-4779-A238-366D77F88C04" dmnElementRef="_9AC18429-8FC6-4779-A238-366D77F88C04" isCollapsed="false">
+      <dmndi:DMNShape id="dmnshape-drg-_BD704B9B-797C-4EAD-8BD7-608E11359693" dmnElementRef="_BD704B9B-797C-4EAD-8BD7-608E11359693" isCollapsed="false">
         <dmndi:DMNStyle>
           <dmndi:FillColor red="255" green="255" blue="255"/>
           <dmndi:StrokeColor red="0" green="0" blue="0"/>
           <dmndi:FontColor red="0" green="0" blue="0"/>
         </dmndi:DMNStyle>
-        <dc:Bounds x="405.24131082423037" y="149" width="100" height="50"/>
+        <dc:Bounds x="438" y="169" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
-      <dmndi:DMNShape id="dmnshape-drg-_755E3697-2EB9-472E-B888-44DAA5525DA1" dmnElementRef="_755E3697-2EB9-472E-B888-44DAA5525DA1" isCollapsed="false">
+      <dmndi:DMNShape id="dmnshape-drg-_57916596-5142-41FC-9B79-48393C3F1495" dmnElementRef="_57916596-5142-41FC-9B79-48393C3F1495" isCollapsed="false">
         <dmndi:DMNStyle>
           <dmndi:FillColor red="255" green="255" blue="255"/>
           <dmndi:StrokeColor red="0" green="0" blue="0"/>
           <dmndi:FontColor red="0" green="0" blue="0"/>
         </dmndi:DMNStyle>
-        <dc:Bounds x="524.2413108242304" y="354" width="100" height="50"/>
+        <dc:Bounds x="642" y="369" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
-      <dmndi:DMNEdge id="dmnedge-drg-_B14317C3-0829-4FEF-A61F-035F6EBB1C7C-AUTO-TARGET" dmnElementRef="_B14317C3-0829-4FEF-A61F-035F6EBB1C7C">
-        <di:waypoint x="574.2413108242304" y="379"/>
-        <di:waypoint x="455.24131082423037" y="199"/>
+      <dmndi:DMNShape id="dmnshape-drg-_9F3D161A-A3BA-4A00-A5A1-7E2486C58D7F" dmnElementRef="_9F3D161A-A3BA-4A00-A5A1-7E2486C58D7F" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="642.860655737705" y="169" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="dmnedge-drg-_636F5B4D-E87E-463C-8F40-1D194A8A1282" dmnElementRef="_636F5B4D-E87E-463C-8F40-1D194A8A1282">
+        <di:waypoint x="248" y="394"/>
+        <di:waypoint x="488" y="194"/>
       </dmndi:DMNEdge>
-      <dmndi:DMNEdge id="dmnedge-drg-_3205AA73-07F2-4286-AFFA-B1D23E1B57F9" dmnElementRef="_3205AA73-07F2-4286-AFFA-B1D23E1B57F9">
-        <di:waypoint x="297" y="384"/>
-        <di:waypoint x="455.24131082423037" y="199"/>
+      <dmndi:DMNEdge id="dmnedge-drg-_55D2FB1F-D7C0-413B-A762-29A6F4F394B7" dmnElementRef="_55D2FB1F-D7C0-413B-A762-29A6F4F394B7">
+        <di:waypoint x="692" y="394"/>
+        <di:waypoint x="488" y="194"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="dmnedge-drg-_EDA5F513-849A-4C0B-94AA-7EB755DA3D9C" dmnElementRef="_EDA5F513-849A-4C0B-94AA-7EB755DA3D9C">
+        <di:waypoint x="692" y="394"/>
+        <di:waypoint x="692.860655737705" y="194"/>
       </dmndi:DMNEdge>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>
