@@ -8,6 +8,9 @@
         <dmn:text>"Buy", "Sell", "Call", "Put"</dmn:text>
       </dmn:allowedValues>
     </dmn:itemComponent>
+    <dmn:itemComponent id="_3EC99C24-B344-4984-9B96-31CB048F6D3F" name="account number" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
     <dmn:itemComponent id="_2BABE717-03FC-4DFE-9081-CFAFC3875DA2" name="cost basis" isCollection="false">
       <dmn:typeRef>number</dmn:typeRef>
     </dmn:itemComponent>
@@ -100,29 +103,45 @@
   </dmn:inputData>
   <dmn:decision id="_9F3D161A-A3BA-4A00-A5A1-7E2486C58D7F" name="Flag for number of transactions">
     <dmn:extensionElements/>
-    <dmn:variable id="_26C3EC19-670D-4261-8AF6-B1BF4C332A61" name="Flag for number of transactions" typeRef="Any"/>
+    <dmn:variable id="_26C3EC19-670D-4261-8AF6-B1BF4C332A61" name="Flag for number of transactions" typeRef="historical transaction"/>
     <dmn:informationRequirement id="_EDA5F513-849A-4C0B-94AA-7EB755DA3D9C">
       <dmn:requiredInput href="#_57916596-5142-41FC-9B79-48393C3F1495"/>
     </dmn:informationRequirement>
     <dmn:context id="_A5A3FCA5-B0BE-4991-8B40-793C4B0C5786">
       <dmn:contextEntry>
-        <dmn:variable id="_1E94FDA9-A7ED-4CF0-9866-1D130227C837" name="Multiple Transactions Same Symbol" typeRef="transaction"/>
-        <dmn:literalExpression id="_4EDBAE58-7C99-4AD7-AC19-33FD60FF5ADD">
-          <dmn:text>Historical Trades.transaction.security[symbol = "GME"]   </dmn:text>
+        <dmn:variable id="_1E94FDA9-A7ED-4CF0-9866-1D130227C837" name="Multiple Transactions Same Symbol" typeRef="historical transaction"/>
+        <dmn:literalExpression id="_1E94FDA9-A7ED-4CF0-9866-1D130227C837">
+          <dmn:text>Historical Trades.transaction[account number = trade.account number]</dmn:text>
         </dmn:literalExpression>
       </dmn:contextEntry>
       <dmn:contextEntry>
         <dmn:variable id="_3B9A03FE-3AAA-48AD-83F4-EFF8105D29F3" name="Count" typeRef="number"/>
-        <dmn:literalExpression id="_B3727880-15B5-4A4F-8CB9-C33E866DFF58">
+        <dmn:literalExpression id="_3B9A03FE-3AAA-48AD-83F4-EFF8105D29F3">
           <dmn:text>count(Multiple Transactions Same Symbol)</dmn:text>
         </dmn:literalExpression>
       </dmn:contextEntry>
       <dmn:contextEntry>
+        <dmn:variable id="_674169D2-2211-45B6-8C90-FA469475C4E8" name="Added Transaction"/>
+        <dmn:literalExpression id="_674169D2-2211-45B6-8C90-FA469475C4E8">
+          <dmn:text>append(Multiple Transactions Same Symbol, trade )    </dmn:text>
+        </dmn:literalExpression>
+      </dmn:contextEntry>
+      <dmn:contextEntry>
         <dmn:literalExpression id="_DBE0B83C-C031-4193-A573-550EB4071691">
-          <dmn:text>Multiple Transactions Same Symbol</dmn:text>
+          <dmn:text>Added Transaction</dmn:text>
         </dmn:literalExpression>
       </dmn:contextEntry>
     </dmn:context>
+  </dmn:decision>
+  <dmn:decision id="_80824535-F86A-47FF-9C3C-FC654F69B6C9" name="Decision-1">
+    <dmn:extensionElements/>
+    <dmn:variable id="_B95736C6-E95B-4E02-BC63-76B325556BD5" name="Decision-1"/>
+    <dmn:informationRequirement id="_74A7A7B3-65C2-4228-B53C-EEF1EAFEFFC7">
+      <dmn:requiredDecision href="#_9F3D161A-A3BA-4A00-A5A1-7E2486C58D7F"/>
+    </dmn:informationRequirement>
+    <dmn:literalExpression id="_D0E062D9-CA7D-4F39-B1B7-67B08FCFD553">
+      <dmn:text/>
+    </dmn:literalExpression>
   </dmn:decision>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram id="_915147C6-105B-45B2-BE3C-5D92FB9F9435" name="DRG">
@@ -142,14 +161,20 @@
             <kie:width>247</kie:width>
             <kie:width>561</kie:width>
           </kie:ComponentWidths>
-          <kie:ComponentWidths dmnElementRef="_4EDBAE58-7C99-4AD7-AC19-33FD60FF5ADD">
+          <kie:ComponentWidths dmnElementRef="_1E94FDA9-A7ED-4CF0-9866-1D130227C837">
             <kie:width>561</kie:width>
           </kie:ComponentWidths>
-          <kie:ComponentWidths dmnElementRef="_B3727880-15B5-4A4F-8CB9-C33E866DFF58">
+          <kie:ComponentWidths dmnElementRef="_3B9A03FE-3AAA-48AD-83F4-EFF8105D29F3">
+            <kie:width>561</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_674169D2-2211-45B6-8C90-FA469475C4E8">
             <kie:width>561</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_DBE0B83C-C031-4193-A573-550EB4071691">
             <kie:width>561</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_D0E062D9-CA7D-4F39-B1B7-67B08FCFD553">
+            <kie:width>300</kie:width>
           </kie:ComponentWidths>
         </kie:ComponentsWidthsExtension>
       </di:extension>
@@ -186,7 +211,16 @@
           <dmndi:StrokeColor red="0" green="0" blue="0"/>
           <dmndi:FontColor red="0" green="0" blue="0"/>
         </dmndi:DMNStyle>
-        <dc:Bounds x="642.860655737705" y="169" width="100" height="50"/>
+        <dc:Bounds x="641.860655737705" y="169" width="116" height="97"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_80824535-F86A-47FF-9C3C-FC654F69B6C9" dmnElementRef="_80824535-F86A-47FF-9C3C-FC654F69B6C9" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="650" y="7" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
       <dmndi:DMNEdge id="dmnedge-drg-_636F5B4D-E87E-463C-8F40-1D194A8A1282" dmnElementRef="_636F5B4D-E87E-463C-8F40-1D194A8A1282">
@@ -199,7 +233,11 @@
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-drg-_EDA5F513-849A-4C0B-94AA-7EB755DA3D9C" dmnElementRef="_EDA5F513-849A-4C0B-94AA-7EB755DA3D9C">
         <di:waypoint x="692" y="394"/>
-        <di:waypoint x="692.860655737705" y="194"/>
+        <di:waypoint x="699.860655737705" y="217.5"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="dmnedge-drg-_74A7A7B3-65C2-4228-B53C-EEF1EAFEFFC7-AUTO-TARGET" dmnElementRef="_74A7A7B3-65C2-4228-B53C-EEF1EAFEFFC7">
+        <di:waypoint x="699.860655737705" y="217.5"/>
+        <di:waypoint x="708" y="7"/>
       </dmndi:DMNEdge>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>
