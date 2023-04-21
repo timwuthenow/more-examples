@@ -91,7 +91,7 @@
     <dmn:context id="_ED070034-FDF5-4096-BA06-16A9272BABFD">
       <dmn:contextEntry>
         <dmn:variable id="_018098BD-E033-4A52-85CE-3D325AD158B6" name="ContextEntry-1"/>
-        <dmn:literalExpression id="_FB7F7DAA-6CBA-4E62-BA3B-BC31D6C4415E">
+        <dmn:literalExpression id="_AB412531-04E1-43DD-BE2C-0F5C8A7D82DB">
           <dmn:text/>
         </dmn:literalExpression>
       </dmn:contextEntry>
@@ -130,7 +130,7 @@
             <kie:width>100</kie:width>
             <kie:width>300</kie:width>
           </kie:ComponentWidths>
-          <kie:ComponentWidths dmnElementRef="_FB7F7DAA-6CBA-4E62-BA3B-BC31D6C4415E">
+          <kie:ComponentWidths dmnElementRef="_AB412531-04E1-43DD-BE2C-0F5C8A7D82DB">
             <kie:width>300</kie:width>
           </kie:ComponentWidths>
         </kie:ComponentsWidthsExtension>
@@ -150,7 +150,7 @@
           <dmndi:StrokeColor red="0" green="0" blue="0"/>
           <dmndi:FontColor red="0" green="0" blue="0"/>
         </dmndi:DMNStyle>
-        <dc:Bounds x="657" y="369" width="100" height="50"/>
+        <dc:Bounds x="650" y="369" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
       <dmndi:DMNShape id="dmnshape-drg-_9F3D161A-A3BA-4A00-A5A1-7E2486C58D7F" dmnElementRef="_9F3D161A-A3BA-4A00-A5A1-7E2486C58D7F" isCollapsed="false">
@@ -181,7 +181,7 @@
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
       <dmndi:DMNEdge id="dmnedge-drg-_EDA5F513-849A-4C0B-94AA-7EB755DA3D9C" dmnElementRef="_EDA5F513-849A-4C0B-94AA-7EB755DA3D9C">
-        <di:waypoint x="707" y="394"/>
+        <di:waypoint x="700" y="394"/>
         <di:waypoint x="699.860655737705" y="217.5"/>
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-drg-_636F5B4D-E87E-463C-8F40-1D194A8A1282" dmnElementRef="_636F5B4D-E87E-463C-8F40-1D194A8A1282">
